@@ -1,0 +1,399 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  background: lightgray;
+  scroll-behavior: smooth;
+  background-attachment: fixed;
+}
+.container{
+  width: 80%;
+  margin: 0 auto;
+}
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: center;
+  gap: 1rem
+
+}
+.nav-container{ 
+  width: 100%;
+  height: auto;
+  
+  overflow: hidden;
+}
+header{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px 0;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid darkgray;
+  overflow: hidden;
+  cursor: pointer;
+}
+.logo{
+  font-size: 0.8rem;
+  transform-style: preserve-3d;
+  font-size: 700;
+  text-transform: capitalize;
+  padding: 10px 15px;
+  font-family: monospace;
+  transition: all 5s linear;
+  animation-name: move;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+.option{
+  padding: 5px;
+}
+@keyframes move {
+  0% {
+    transform: skewY(10deg);
+  }
+
+  50% {
+    
+    transform: skewX(20deg);
+    
+  }
+
+  100% {
+    transform: skewY(-5deg);
+    ;
+  }
+}
+nav li{
+  display: inline;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: cursive;
+  padding: 0 15px;
+  list-style: none;
+  text-decoration: none;
+}
+.header{
+  text-align: center;
+  margin-top: 40px;
+  font-family: monospace;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  animation-name: moveHeader;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes moveHeader {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+
+     transform: scale(1.2);
+
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+.underline{
+  background:darkgray;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 1px 0px;
+}
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d; 
+  background: white;
+  transition: 2s;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0,0.3);
+  transform: perspective(2000px) rotateY(var(--rotate-y, 0));
+}
+.card.flip{ 
+  --rotate-y: 180deg;
+}
+.card .font,
+.card .back{
+  position: absolute;
+  padding: 1rem;
+  backface-visibility: hidden;
+}
+
+
+.card .back{
+  transform: rotateY(180deg);
+}
+.form-container{
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+.form-container h2{
+  text-transform: capitalize;
+  font-family: monospace;
+  padding: 5px 10px;
+}
+form{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+label{
+  font-weight: 100;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-family: cursive;
+}
+select{
+  width: 50%;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: gray;
+  color: white; 
+  text-transform: capitalize;
+}
+input{
+     padding: 15px 20px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      background: gray;
+      color: white;
+      margin: 5px 0px;
+}
+.input{
+  width: 90%;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+/*  about Classes */
+.about-container{
+  text-align: center;
+  width: 80%;
+   margin: 30px auto;
+   border-radius: 5px;
+   padding: 10px 25px;
+   box-shadow:0px 0px 5px 5px rgba(0, 0, 0,0.5);
+   background: white;
+   transition: .5s cubic-bezier(1, 0, 0, 1)
+}
+.about-container:hover{
+  background:rgba(0, 0, 0,0.3);
+  color: whitesmoke;
+}
+.about-container h1{
+  margin-top: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  padding: 5px 10px;
+  margin-top: 40px;
+}
+.about-container h3{
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+.about-container p{
+  margin-top: 20px;
+  text-transform: capitalize;
+  word-spacing: 5px;
+  font-family: Helvetica;
+  font-size: 15px;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+.about-container button{
+  padding: 5px 15px;
+  margin-top: 30px; 
+  border-radius: 8px;
+  border: none;
+  border: 1px solid lightgray;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+/*  comment section stylee */
+.comment-container{
+  width: 100%;
+  height: auto;
+  background: darkgray;
+  opacity: .5;
+  margin: 20px;
+  
+}
+.form-wrapper{
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 40px;
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow:0px 0px 5px 5px rgba(0, 0, 0, 0.5);
+  background: rgb(218, 214, 214);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+textarea{
+  width: 100%;
+  height: 200px;
+  max-width: 100%;
+  max-height: 200px;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-weight: 400;
+}
+textarea::first-letter{
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: monospace;
+}
+.btn{
+  display: block;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background: gray;
+  color: whitesmoke;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.comment{
+  width: 60%;
+  margin: 30px auto;
+  text-align: center;
+  padding: 10px 20px;
+  box-shadow:0px 0px 5px 5px rgba(0, 0, 0, 0.5);
+  background: rgb(138, 131, 131);
+  margin-bottom: 20px;
+  border-radius: 5px;
+  color: whitesmoke;
+}
+.comment .name{
+  font-size: 12px;
+  padding: 5px 10px;
+  text-transform: capitalize;
+  font-family: monospace;
+  font-weight: 100;
+}
+.comment .email{
+  font-size: 12px;
+  font-weight: 100;
+  text-transform: capitalize;
+  font-family: cursive;
+
+}
+.post{
+ max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.post .comment{
+  max-width: 100%;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  font-family: cursive;
+  word-break: break-all;
+  font-size: 13px;
+  font-weight: 700;
+  
+}
+
+
+@media (max-width: 500px){
+  .nav-container{
+    width: 100%;
+  }
+  .logo{
+    font-size: 8px;
+  }
+  nav li{
+    font-size: 0.7rem;
+  }
+  .header {
+    margin-top: 20px; 
+  }
+  .flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .header h1{
+    font-size: 13px;
+    justify-content: space-between;
+  }
+  .head{
+    font-size: 10px;
+  }
+  label{
+    font-size: 12px;
+    font-weight: lighter;
+    display: block;
+  }
+  input{
+    width: 20%;
+    appearance: none;
+   padding: 5px;
+    font-size: 8px;
+  }
+  .select{
+    width: 80%;
+     padding: 5px;
+    font-size: 8px;
+    appearance: none;
+    border-radius: 4px;
+  }
+  /*  */
+ .about-container h1{
+   font-size: 18px;
+   font-weight: 700;
+
+ }
+ .about-container h3{
+   font-size: 12px;
+ }
+ .about-container p{
+   font-size: 10px;
+   font-weight: 700;
+   letter-spacing: none;
+    word-spacing: none;
+ }
+ .form-wrapper{
+   width: 100%;
+ }
+ .comment{
+   width: 90%;
+ }
+ .input{
+   width: 90%;
+   padding: 5px 10px;
+   font-size: 15px;
+ }
+ textarea{
+   width: 80%;
+   margin: 5px 0;
+ }
+}
