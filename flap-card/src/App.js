@@ -14,6 +14,10 @@ function App() {
     textarea.innerHTML = str
     return textarea.value
   }
+  useEffect(() => {
+      document.title = 'Flap-Card/Home'
+      
+  },[])
 // useEffect for calling intial data
   useEffect(() => {
     setLoading(true)

@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { db, timeStamp } from '../firebase'
-// const messange = {
-//     fontSize: '30px',
-//     padding: '10px 20px',
-//     b0orderRadius: '5px',
-// }
    
 function Comment() {
    
@@ -41,7 +36,7 @@ function Comment() {
             const document = []
             snap.forEach((doc) => {
             const data =doc.data()
-                document.push(data)
+                document.push({...data})
                 setComment(document)
                 setLoading(false)
             })

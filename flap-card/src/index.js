@@ -2,21 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import FlipCardList from './comps/FlipCardList'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route,} from 'react-router-dom'
 import NavBar from './comps/NavBar'
 import About from './comps/About'
 import Nopage from './comps/Nopage'
+import ContextProvider from './context/AuthContext'
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <NavBar />
+      <ContextProvider>
       <Switch>
         <Route  exact path='/' component={App}/>
         <Route path='/FlipCardList' component={FlipCardList}/>
-        <Route path='/About' component={About}/>
+        <Route path='/About' component={About} />
         <Route path='*' component={Nopage}/>
       </Switch>
+      </ContextProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
